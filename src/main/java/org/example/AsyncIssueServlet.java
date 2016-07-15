@@ -43,7 +43,6 @@ public class AsyncIssueServlet extends HttpServlet {
 
         @Override
         public void onDataAvailable() throws IOException {
-            System.out.println("onDataAvailable");
             byte[] buffer = new byte[1024];
             int read = 0;
             while (this.in.isReady()) {
@@ -61,20 +60,18 @@ public class AsyncIssueServlet extends HttpServlet {
 
         @Override
         public void onAllDataRead() throws IOException {
-            System.out.println("onAllDataRead");
             System.out.println(this.builder.toString());
             this.context.complete();
         }
 
         @Override
         public void onError(Throwable throwable) {
-            System.out.println("onError: " + throwable);
             throwable.printStackTrace();
+            this.context.complete();
         }
 
         @Override
         public void onWritePossible() throws IOException {
-            System.out.println("onWritePossible");
             while (this.out.isReady()) {
                 this.out.flush();
             }

@@ -24,7 +24,6 @@
             <artifactId>jetty-webapp</artifactId>
             <version>9.3.10.v20160621</version>
         </dependency>
-
     </dependencies>
 
     

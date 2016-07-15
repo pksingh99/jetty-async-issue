@@ -8,7 +8,7 @@ import org.eclipse.jetty.servlet.ServletHolder;
 /**
  * @author Arjen Poutsma
  */
-public class Driver {
+public class ServerDriver {
 
 	public static void main(String[] args) throws Exception {
 		Server jettyServer = new Server();
