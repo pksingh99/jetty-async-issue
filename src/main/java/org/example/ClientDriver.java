@@ -1,17 +1,11 @@
 package org.example;
 
-import java.io.BufferedInputStream;
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
-/**
- * @author Arjen Poutsma
- */
 public class ClientDriver {
 
 	private static final int CHUNK_LENGTH = 10;

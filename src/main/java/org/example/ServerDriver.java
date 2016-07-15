@@ -5,9 +5,6 @@ import org.eclipse.jetty.server.ServerConnector;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
 
-/**
- * @author Arjen Poutsma
- */
 public class ServerDriver {
 
 	public static void main(String[] args) throws Exception {
@@ -15,8 +12,8 @@ public class ServerDriver {
 		AsyncIssueServlet servlet = new AsyncIssueServlet();
 		ServletHolder servletHolder = new ServletHolder(servlet);
 
-		ServletContextHandler
-				contextHandler = new ServletContextHandler(jettyServer, "", false, false);
+		ServletContextHandler contextHandler =
+				new ServletContextHandler(jettyServer, "", false, false);
 		contextHandler.addServlet(servletHolder, "/");
 
 		ServerConnector connector = new ServerConnector(jettyServer);
